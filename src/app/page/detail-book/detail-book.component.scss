@@ -1,0 +1,119 @@
+$color-white: #ffffff;
+$color-pink: #e59285;
+$orange: #ff7013;
+$full-size: 100%;
+.fix-top {
+    position: relative;
+    top: 50px;
+    padding: 0 15px;
+}
+
+.banner-detail {
+    padding-top: 210px;
+    padding-bottom: 110px;
+    background-image: url('../../../assets/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    .banner-title {
+        color: $color-white;
+    }
+    .banner-content {
+        padding: 15px 0;
+        ul {
+            list-style: none;
+            list-style-image: none;
+            li {
+                display: inline;
+                .breadcrumb_item {
+                    color: $color-white;
+                    font-size: 14px;
+                    font-style: italic;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    padding-right: 20px;
+                    position: relative;
+                    transition: 0.3s;
+                    &::after {
+                        content: "/";
+                        position: absolute;
+                        right: 6px;
+                        top: 0px;
+                    }
+                }
+                span {
+                    color: $color-pink;
+                }
+            }
+        }
+    }
+}
+
+.main {
+    position: relative;
+    margin-top: 70px;
+    .book-img {
+        display: block;
+        padding: 0;
+        text-align: center;
+        -webkit-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+        -ms-transform: 0 0px 18px rgba(0, 0, 0, 0.2);
+        -o-transform: 0 0px 18px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+    }
+    .product-info {
+        position: relative;
+        margin-bottom: 10px;
+        h1 {
+            float: left;
+            width: 100%;
+            font-size: 32px;
+            font-weight: bold;
+            line-height: 1.5;
+            padding-bottom: 20px;
+            position: relative;
+            text-transform: uppercase;
+            border: 0;
+            &::before {
+                bottom: 0;
+                content: "";
+                height: 2px;
+                left: 0;
+                position: absolute;
+                width: 70px;
+                background: $orange;
+            }
+        }
+        .author {
+            padding: 0 0 12px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #5e5e5e;
+            overflow: hidden;
+            a {
+                background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+                color: #2b2b2b;
+                text-decoration: none;
+            }
+        }
+        .price-box {
+            font-size: 20px;
+            text-align: left;
+            padding: 0;
+            border: none;
+            overflow: hidden;
+            margin: 0;
+            .amount {
+                color: $orange;
+            }
+        }
+        .short-description {
+            padding: 15px 0 0;
+            line-height: 1.8;
+        }
+    }
+}
+
+.w-100 {
+    width: 100%;
+}

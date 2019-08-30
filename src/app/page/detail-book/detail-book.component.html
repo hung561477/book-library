@@ -1,0 +1,100 @@
+<div class="banner-detail">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="banner-inner text-center">
+          <h2 class="banner-title">{{dataCompleted.volumeInfo?.title}}</h2>
+          <nav class="banner-content" role="navigation" aria-label="breadcrumbs">
+            <ul>
+              <li>
+                <a class="breadcrumb_item" href="/" title="Back to the home page">Home</a>
+              </li>
+              <li>
+                <span>{{dataCompleted.volumeInfo?.title}}</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-12">
+        <div class="single-product">
+          <div class="book-frame">
+            <img [src]="dataCompleted.volumeInfo?.imageLinks.thumbnail" class="book-img img-fluid w-100">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 col-12">
+        <form id="add-item-form" class="product-info">
+          <div class="product-info-main">
+            <h1>{{dataCompleted.volumeInfo?.title}}</h1>
+            <div class="author">
+              <span class="posted-in">Authors:</span>
+              <span *ngFor="let item of dataCompleted.volumeInfo?.authors">
+                <a href="#">{{item}}</a>
+              </span>
+            </div>
+            <div class="price-box">
+              <span class="amount" *ngIf="dataCompleted.saleInfo?.isEbook && dataCompleted.saleInfo?.saleability !== 'FREE' ">
+                {{dataCompleted.saleInfo.listPrice.amount | currency:'VND'}}
+              </span>
+              <span class="amount" *ngIf="dataCompleted.saleInfo?.saleability === 'NOT_FOR_SALE'">
+                NOT FOR SALE
+              </span>
+              <span class="amount" *ngIf="dataCompleted.saleInfo?.saleability === 'FREE'">
+                FREE
+              </span>
+            </div>
+            <div class="product-overview">
+              <p class="short-description">
+                {{description}}
+              </p>
+            </div>
+            <div class="product-meta">
+              <span class="posted-in">Categories:</span>
+              <span *ngFor="let item of dataCompleted.volumeInfo?.categories">
+                {{item}}
+              </span>
+            </div>
+            <div class="product-meta">
+              <span class="posted-in">Version:</span>
+              <span>
+                {{dataCompleted.volumeInfo?.contentVersion}}
+              </span>
+            </div>
+            <div class="product-meta">
+                <span class="posted-in">Language:</span>
+                <span>
+                  {{dataCompleted.volumeInfo?.language}}
+                </span>
+              </div>
+            <div class="product-meta">
+              <span class="posted-in">Publisher:</span>
+              <span>{{dataCompleted.volumeInfo?.publisher}}</span>
+            </div>
+            <div class="product-meta">
+              <span class="posted-in">Subtitle:</span>
+              <span>{{dataCompleted.volumeInfo?.subtitle}}</span>
+            </div>
+            <div class="product-meta">
+              <span class="posted-in">Created Date:</span>
+              <span>{{dataCompleted.volumeInfo?.publishedDate}}</span>
+            </div>
+            <div class="product-meta">
+              <span class="posted-in">Pages:</span>
+              <span>{{dataCompleted.volumeInfo?.pageCount}}</span>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

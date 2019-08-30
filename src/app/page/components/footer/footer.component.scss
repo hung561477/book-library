@@ -1,0 +1,27 @@
+$blue: rgba(31, 39, 73, 1);;
+$white: #fff;
+$color-main: rgba(0, 0, 0, .2);
+footer {
+    padding-left: 0;
+    margin-top: 100px;
+    &.page-footer {
+        bottom: 0;
+        color: $white;
+    }
+    .footer-copyright {
+        overflow: hidden;
+        background-color: $color-main;
+        color: rgba(255, 255, 255, .6);
+        a {
+            color: $white;
+        }
+    }
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.font-small {
+    font-size: .9rem;
+}

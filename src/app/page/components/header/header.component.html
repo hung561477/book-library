@@ -1,0 +1,41 @@
+<header class="spyre-navbar navbar navbar-expand-lg fixed-top align-items-center">
+  <div class="container">
+    <a class="navbar-brand mr-lg-5 mr-xl-7" (click)="backtoHome()">
+      <img src="../../../../assets/logo.png" class="d-none d-lg-block" alt="Book" width="183">
+      <img src="../../../../assets/logo.png" class="d-block d-lg-none" alt="Book" width="150">
+    </a>
+
+    <div class="search d-none d-lg-flex justify-content-end ml-auto mr-2">
+      <input class="form-control mr-2" type="text">
+      <i class="zmdi zmdi-search"></i>
+    </div>
+
+    <div [ngClass]="isOpen? 'menu-toggle open': 'menu-toggle'">
+      <div class="hamburger" (click)="toogleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cross" (click)="toogleMenu()">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div [ngClass]="isOpen? 'spyre-navbar-overlay overlay-slide open': 'spyre-navbar-overlay overlay-slide'">
+    <div class="container">
+      <div class="row">
+        <div class="spyre-navbar-nav-container col-md-6 col-lg-5 col-xl-4 bg-white ext-l">
+          <nav [ngClass]="isOpen? 'spyre-navbar-nav open': 'spyre-navbar-nav'">
+            <ul class="spyre-nav">
+              <li class="spyre-nav-item"><a (click)="backtoHome()" class="spyre-nav-link">Home</a></li>
+              <li class="spyre-nav-item"><a (click)="backtoHome()" class="spyre-nav-link">Book</a></li>
+              <li class="spyre-nav-item"><a (click)="backtoHome()" class="spyre-nav-link">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

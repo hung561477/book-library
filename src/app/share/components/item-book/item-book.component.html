@@ -1,0 +1,20 @@
+<div class="product">
+  <div class="img-blk"><a (click)="goBookDetail(dataCompleted.id)">
+      <img [src]="dataCompleted.volumeInfo.imageLinks?.thumbnail" class="post-image img-fluid" alt=""></a>
+  </div>
+  <div class="detail">
+    <div class="product_title">
+      <a (click)="goBookDetail(dataCompleted.id)">
+        <span class="product-name text-center">{{dataCompleted.volumeInfo.title}}</span>
+      </a>
+      <span class="price">
+        <span class="amount" *ngIf="dataCompleted.saleInfo.isEbook && dataCompleted.saleInfo.saleability !== 'FREE' ">
+          {{dataCompleted.saleInfo.listPrice.amount | currency:'VND'}}
+        </span>
+        <span class="amount" *ngIf="dataCompleted.saleInfo.saleability === 'NOT_FOR_SALE'">
+          NOT FOR SALE
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
